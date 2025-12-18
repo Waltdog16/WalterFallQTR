@@ -1,20 +1,29 @@
-<!DOCTYPE html>! DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>% block title %}My Website {% endblock %}</title>
-    <title>{% block title %}My website{% endblock %}</title> 
-    <link rel="stylesheet" href="{{url_for('static', filename='bootstrap-5.3.8-dist/css/bootstrap.min.css')}}">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}My website{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap-5.3.8-dist/css/bootstrap.min.css') }}">
+  {% block head %}{% endblock %}
+  <style>
+    /* Fallback styles in case Bootstrap CSS fails to load */
+    .navbar { display: block; background-color: #343a40; }
+    .navbar .navbar-brand, .navbar .nav-link { color: #fff !important; }
+    .navbar .nav-link { padding: .5rem .75rem; display: inline-block; }
+    .navbar-toggler { color: #fff; background: transparent; border: 1px solid rgba(255,255,255,0.1); padding: .25rem .5rem; }
+  </style>
 </head>
 <body>
-{% block navbar %} {% endblock %}
-<div class="container mt-4">
+  {% block navbar %}{% endblock %}
 
-</div class="container mt-4">
-      {% block content %} {% endblock %}
-    </div>
+  <main class="container mt-4">
+    {% block content %}{% endblock %}
+  </main>
 
-      {% block footer %} {% endblock %}
-    <script src="{url_for('static', filename='bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js')}"></script>
+  {% block footer %}{% endblock %}
+
+  <script src="{{ url_for('static', filename='bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js') }}"></script>
+  {% block scripts %}{% endblock %}
 </body>
-<html></html>
+</html>
