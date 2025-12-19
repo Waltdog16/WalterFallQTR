@@ -5,7 +5,7 @@
 {% block navbar %}
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">A Nutthouse Studios</a>
+    <a class="navbar-brand" href="#">Walter Street</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
       <span class="navbar-toggler-text" style="margin-left:.5rem;color:#fff;">Menu</span>
@@ -23,7 +23,23 @@
 {% endblock %}
 
 {% block content %}
-  <h1>Welcome To my Flask App!</h1>
-  <p>This page was loaded from an HTML template!</p>
-{% endblock %}
+  <h1>I am Walter</h1>
+  <p>Wassup guys</p>
+
+
  
+ <div class="card" style="width: 18rem;">
+  <img src="{{ url_for('static', filename='images/wall.jpg') }}"
+       class="card-img-top profile-img"
+       alt="Profile">
+  <div class="card-body">
+    <h5 class="card-title">Walter Survine</h5>
+    <p class="card-text">Employee</p>
+    <a href="#" class="btn btn-primary">View Profile</a>
+  </div>
+</div>
+
+   {% endblock %}
+   
+{% block footer %} {% endblock %} 
+
